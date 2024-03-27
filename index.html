@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Transição de audio</title>
+  <style>
+
+       /* Exemplo de estilo para o contêiner principal */
+       body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Para que o rodapé fique sempre na parte inferior */
+            margin: 0;
+        }
+
+        /* Estilo para o contêiner dos itens laterais */
+        .container-side {
+            width: 20%; /* largura dos contêineres laterais */
+            padding: 20px; /* espaço interno ao redor do conteúdo */
+            background-color: #f0f0f0; /* cor de fundo dos contêineres laterais */
+            border: 1px solid #ccc; /* borda dos contêineres laterais */
+            box-sizing: border-box; /* inclui padding e border na largura total */
+        }
+
+        /* Estilo para o contêiner do meio */
+        .container-middle {
+            flex: 1; /* Para ocupar todo o espaço restante */
+            padding: 20px; /* espaço interno ao redor do conteúdo */
+            background-color: #f0f0f0; /* cor de fundo do contêiner do meio */
+            border: 1px solid #ccc; /* borda do contêiner do meio */
+            box-sizing: border-box; /* inclui padding e border na largura total */
+        }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between; /* Alinha os elementos à esquerda e à direita */
+      align-items: center; /* Alinha os elementos verticalmente */
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .assinar {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+
+    /* Estilos de contraste */
+    .high-contrast {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .black-and-white {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .blue-contrast {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .green-contrast {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    .yellow-contrast {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    /* Estilos para alinhar a navegação à direita */
+    .right-align {
+      margin-left: auto; /* Empurra a navegação para a direita */
+    }
+
+        /* Estilo para os contêineres */
+        .container {
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        float: left; /* Faz com que os contêineres flutuem à esquerda */
+        width: 30%; /* Define a largura dos contêineres */
+        margin-right: 3%; /* Adiciona uma margem à direita para criar espaço entre os contêineres */
+    }
+
+    /* Limpa a flutuação após os contêineres */
+    .clear {
+        clear: both;
+    }
+
+    /* Estilo para o rodapé */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        clear: both; /* Limpa a flutuação */
+    }
+
+    /* Estilo para o botão */
+    .toggle-button {
+        cursor: pointer;
+        background-color: #662aac;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Regra 2: Não altere a semântica de elementos nativos do HTML -->
+    <h1>Site de Transcrição de audio</h1>
+    <nav class="right-align">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Notícias</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+
+    <div id="contrastOptions">
+      <button id="blackAndWhite">Preto e Branco</button>
+      <button id="highContrast">Alto Contraste</button>
+      <button id="blueContrast">Azul</button>
+      <button id="greenContrast">Verde</button>
+      <button id="yellowContrast">Amarelo</button>
+    </div>
+
+   
+</style>
+</head>
+<body>
+<!-- Seu conteúdo principal aqui -->
+
+    <h1>Meu Site</h1>
+
+
+<!-- Botões para abrir e fechar os contêineres -->
+<button class="toggle-button" onclick="toggleContainer('container1')">Abrir/Fechar Container 1</button>
+<button class="toggle-button" onclick="toggleContainer('container2')">Abrir/Fechar Container 2</button>
+<button class="toggle-button" onclick="toggleContainer('container3')">Abrir/Fechar Container 3</button>
+
+<!-- Contêineres -->
+<div class="container" id="container1">
+     <img src="images.jfif" alt="Imagem 1">
+    <!-- Conteúdo do contêiner 1 -->
+    <p>A transcrição de áudio oferece diversos benefícios,<br> 
+        incluindo acessibilidade para pessoas com deficiência auditiva,<br> 
+        facilidade de referência, melhor compreensão para alguns indivíduos,<br> 
+        SEO aprimorado, facilitação da tradução e localização, arquivamento eficiente,<br>
+        apoio à análise, revisão e edição simplificadas, suporte ao aprendizado de idiomas <br>
+        e conformidade com regulamentos e legislação.</p>
+</div>
+<div class="container" id="container2">
+    <img src="download.png" alt="Imagem 2">
+    <!-- Conteúdo do contêiner 2 -->
+    <p>A transcrição de áudio oferece diversos benefícios,<br> 
+        incluindo acessibilidade para pessoas com deficiência auditiva,<br> 
+        facilidade de referência, melhor compreensão para alguns indivíduos,<br> 
+        SEO aprimorado, facilitação da tradução e localização, arquivamento eficiente,<br>
+        apoio à análise, revisão e edição simplificadas, suporte ao aprendizado de idiomas <br>
+        e conformidade com regulamentos e legislação.</p>
+</div>
+<div class="container" id="container3">
+    <img src="download.jfif" alt="Imagem 3">
+    <!-- Conteúdo do contêiner 3 -->
+    <p>Softwares de transcrição que utilizam inteligência artificial<br> 
+        incluem Google Cloud Speech-to-Text, IBM Watson Speech to Text,<br> 
+        Microsoft Azure Speech to Text, Amazon Transcribe, Descript, Rev.ai e Trint. <br> 
+        Eles convertem áudio em texto com precisão, oferecendo recursos como transcrição em tempo real e edição avançada.</p>
+</div>
+
+<!-- Limpa a flutuação após os contêineres -->
+<div class="clear"></div>
+
+<footer>
+    <!-- Conteúdo do rodapé -->
+    <p>&copy;@2024 Desenvolvido por Ana Camargo.</p>
+</footer>
+
+
+<body>
+
+  <!-- Botão para iniciar/parar a transcrição. -->
+  <button id="startButton">Iniciar Transcrição</button>
+  <div id="transcription"></div>
+  
+  <!-- criação de variáveis JavaScript para elementos -->
+  <script>
+    // Obtém referências para os elementos HTML relevantes
+    const transcription = document.getElementById('transcription');
+    const startButton = document.getElementById('startButton');
+  
+    // Variáveis para controle do reconhecimento de fala
+    let recognizing = false; // Indica se o reconhecimento está ocorrendo
+    let finalTranscript = ''; // Armazena o texto final reconhecido
+  
+    // Verifica se o navegador suporta a API de Reconhecimento de Fala
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  
+    // Verifica se a API de Reconhecimento de Fala é suportada
+    if (window.SpeechRecognition) {
+      // Cria uma instância do reconhecimento de fala
+      var recognition = new SpeechRecognition();
+      // Configurações do reconhecimento de fala
+      recognition.continuous = true; // Reconhecimento contínuo
+      recognition.interimResults = true; // Resultados intermediários
+      recognition.lang = 'pt-BR'; // Define o idioma como Português- Brasil
+  
+      // Evento acionado quando o reconhecimento de fala inicia
+      recognition.onstart = function() {
+        recognizing = true; // Define que o reconhecimento está ocorrendo
+        startButton.textContent = 'Parar Transcrição'; // Atualiza o texto do botão
+      };
+  
+      // Evento acionado em caso de erro durante o reconhecimento
+      recognition.onerror = function(event) {
+        console.log('Erro de reconhecimento: ' + event.error); // Registra o erro no console
+      };
+  
+      // Evento acionado quando o reconhecimento de fala termina
+      recognition.onend = function() {
+        recognizing = false; // Define que o reconhecimento não está mais ocorrendo
+        startButton.textContent = 'Iniciar Transcrição'; // Atualiza o texto do botão
+      };
+  
+      // Evento acionado quando resultados de reconhecimento de fala estão disponíveis
+      recognition.onresult = function(event) {   
+        let interimTranscript = ''; // Variável para transcrição intermediária
+        // Itera sobre os resultados do reconhecimento
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            // Se a transcrição for final, adiciona ao texto final
+            finalTranscript += event.results[i][0].transcript;
+          } else {
+            // Caso contrário, é uma transcrição intermediária
+            interimTranscript += event.results[i][0].transcript;
+          }
+        }
+        // Exibe o texto reconhecido ao usuário
+        transcription.textContent = finalTranscript + interimTranscript;
+      };
+  
+      // Adiciona evento de clique ao botão de início/parada da transcrição
+      startButton.addEventListener('click', function() {
+        if (recognizing) {
+          recognition.stop(); // Para o reconhecimento se já estiver ocorrendo
+          return;
+        }
+        // Se não estiver ocorrendo, limpa o texto e inicia o reconhecimento
+        finalTranscript = '';
+        transcription.textContent = '';
+        recognition.start();
+      }, false);
+  
+    } else {
+      // Se a API não é suportada, esconde o botão e exibe uma mensagem
+      startButton.style.visibility = 'hidden';
+      transcription.textContent = 'Seu navegador não suporta a API de reconhecimento de fala.';
+    }
+  
+    function toggleContainer(containerId) {
+        var container = document.getElementById(containerId);
+        if (container.style.display === "none") {
+            container.style.display = "block";
+        } else {
+            container.style.display = "none";
+        }
+    }
+
+  </script>
+
+</body>
+</html>
